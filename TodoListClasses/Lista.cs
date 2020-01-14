@@ -5,7 +5,7 @@ namespace TodoListClasses
 {
     public class Lista
     {
-        public List<Todo> todos;
+        private List<Todo> todos;
         public Lista()
         {
             todos = new List<Todo>();

@@ -25,7 +25,7 @@ namespace TodoListFrontend
         {
             InitializeComponent();
             
-            Todos.ItemsSource = new Lista().todos;
+            Todos.ItemsSource = new Lista().Todos;
         }
         
     }
