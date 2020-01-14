@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TodoListClasses;
 
 namespace TodoListFrontend
 {
@@ -23,6 +24,9 @@ namespace TodoListFrontend
         public MainWindow()
         {
             InitializeComponent();
+            
+            Todos.ItemsSource = new Lista().todos;
         }
+        
     }
 }
