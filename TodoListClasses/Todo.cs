@@ -27,7 +27,7 @@ namespace TodoListClasses
         public short Priorytet { get => priorytet;}
         public Data Utworzono { get => utworzono; }
         public Data Deadline { get => deadline; }
-        public string Opis { get => opis; }
+        public string Opis;
         public Todo(string _nazwa, DateTime _deadline, short _priorytet = 3, string _opis = "")
         {
             nazwa = _nazwa;
