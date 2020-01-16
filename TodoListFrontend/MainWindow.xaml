@@ -22,6 +22,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <ListBox Name="Todos" ItemContainerStyle="{StaticResource TodoItem}" Style="{StaticResource TodoList}"/>
+        <ListBox Name="Todos" ItemContainerStyle="{StaticResource TodoItem}" Style="{StaticResource TodoList}" SelectionChanged="TodoClick" />
     </Grid>
 </Window>
