@@ -19,20 +19,17 @@ namespace TodoListFrontend
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : NavigationWindow
     {
+        private Lista currentList;
+        public Lista CurrentList { get => currentList; } 
         public MainWindow()
         {
             InitializeComponent();
             
-            Todos.ItemsSource = new Lista().Todos;
+            currentList = new Lista();
+            this.Navigate(new MainPage(CurrentList.Todos));
         }
 
-        public void TodoClick(object target, SelectionChangedEventArgs e)
-        {
-            Todo todo = (Todo)(target as ListBox).SelectedItem;
-            this.Content = todo;
-        }
-        
     }
 }
