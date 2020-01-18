@@ -5,9 +5,12 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListFrontend", "TodoListFrontend\TodoListFrontend.csproj", "{41DC0D0F-2528-42DF-8D69-66F37E041EED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListClasses", "TodoListClasses\TodoListClasses.csproj", "{62B83167-4107-4330-8B96-145CA742C5A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoListClasses", "TodoListClasses\TodoListClasses.csproj", "{62B83167-4107-4330-8B96-145CA742C5A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListTests", "TodoListTests\TodoListTests.csproj", "{5E0BA711-93DC-49BB-BD6E-E2586719576B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62B83167-4107-4330-8B96-145CA742C5A3} = {62B83167-4107-4330-8B96-145CA742C5A3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
