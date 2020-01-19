@@ -17,19 +17,19 @@ using TodoListClasses;
 namespace TodoListFrontend
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy TodoPage.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class TodoPage : Page
     {
-        private Lista currentList;
-        public Lista CurrentList { get => currentList; } 
-        public MainWindow()
+        public TodoPage(Todo todo)
         {
             InitializeComponent();
-            
-            currentList = new Lista();
-            this.Navigate(new MainPage(CurrentList.Todos));
+            this.DataContext = todo;
         }
 
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }
