@@ -27,7 +27,7 @@ namespace TodoListFrontend
         public Edycja()
         {
             InitializeComponent();
-            aplikacja = ((App)Application.Current);
+            UstawOdwolanieDoAplikacji();
             initialTodo = new Todo();
             Reset();
             this.DataContext = CurrentTodo;
@@ -35,8 +35,13 @@ namespace TodoListFrontend
 
         private void Reset()
         {
-            CurrentTodo = new Todo(initialTodo.Nazwa, initialTodo.Deadline, initialTodo.Priorytet, initialTodo.Opis);
+            CurrentTodo = new Todo(initialTodo.Nazwa, initialTodo.Deadline, initialTodo.Priorytet, initialTodo.Opis, initialTodo.Id);
             this.DataContext = CurrentTodo;
+        }
+
+        private void UstawOdwolanieDoAplikacji()
+        {
+            aplikacja = ((App)Application.Current);
         }
 
         public void Reset(object sender, RoutedEventArgs e)
@@ -47,6 +52,7 @@ namespace TodoListFrontend
         public Edycja(Todo _todo)
         {
             InitializeComponent();
+            UstawOdwolanieDoAplikacji();
             initialTodo = _todo;
             Reset();
         }

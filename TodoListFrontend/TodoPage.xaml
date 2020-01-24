@@ -66,8 +66,11 @@
             <Run Text="{Binding DeadlineSformatowane, Mode=OneWay}" />
         </TextBlock>
         <TextBlock Text="{Binding Opis, Mode=OneWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" FontSize="14"/>
-        <Button Click="Back" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}">
+        <Button Click="Back" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="-100, 0, 0, 0">
             Powrót
+        </Button>
+        <Button Click="Edit" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="100, 0, 0, 0">
+            Edytuj
         </Button>
     </Grid>
 </Page>

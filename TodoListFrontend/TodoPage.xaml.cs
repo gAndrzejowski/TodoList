@@ -21,15 +21,22 @@ namespace TodoListFrontend
     /// </summary>
     public partial class TodoPage : Page
     {
+        public Todo CurrentTodo;
         public TodoPage(Todo todo)
         {
             InitializeComponent();
-            this.DataContext = todo;
+            CurrentTodo = todo;
+            this.DataContext = CurrentTodo;
         }
 
         private void Back(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Edycja(CurrentTodo));
         }
     }
 }
