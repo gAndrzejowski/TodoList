@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TodoListClasses;
 
 namespace TodoListFrontend
 {
@@ -13,5 +14,11 @@ namespace TodoListFrontend
     /// </summary>
     public partial class App : Application
     {
+        public Lista AktualnaLista = new Lista();
+
+        public void ZmodyfikujLubDodajTodo(Todo zmienione)
+        {
+            AktualnaLista.ZmodyfikujLubDodajTodo(zmienione);
+        }
     }
 }

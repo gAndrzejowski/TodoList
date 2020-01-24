@@ -19,5 +19,20 @@ namespace TodoListClasses
         {
             get => todos;
         }
+
+        public List<Todo> ZmodyfikujLubDodajTodo(Todo todo)
+        {
+            int pozycja = todos.FindIndex(element => element.Id == todo.Id);
+            if (pozycja == -1)
+            {
+                todos.Add(todo);
+            }
+            else
+            {
+                todos.RemoveAt(pozycja);
+                todos.Insert(pozycja, todo);
+            }
+            return Todos;
+        }
     }
 }

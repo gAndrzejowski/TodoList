@@ -24,7 +24,18 @@
     </Page.Resources>
     <Page.Content>
         <Grid>
-            <ListBox Name="Todos" ItemContainerStyle="{StaticResource TodoItem}" Style="{StaticResource TodoList}" SelectionChanged="TodoClick" />
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <ListBox 
+                Name="Todos" 
+                ItemContainerStyle="{StaticResource TodoItem}" 
+                Style="{StaticResource TodoList}" 
+                SelectionChanged="TodoClick"
+                Grid.Row="0"
+                />
+            <Button Click="Button_Click" Grid.Row="1">Nowe Todo</Button>
         </Grid>
     </Page.Content>
 </Page>
