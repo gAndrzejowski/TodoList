@@ -63,7 +63,7 @@
         </TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  FontSize="18">
             <Run Text="Termin: "/>
-            <Run Text="{Binding Deadline, Mode=OneWay}" />
+            <Run Text="{Binding DeadlineSformatowane, Mode=OneWay}" />
         </TextBlock>
         <TextBlock Text="{Binding Opis, Mode=OneWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" FontSize="14"/>
         <Button Click="Back" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}">

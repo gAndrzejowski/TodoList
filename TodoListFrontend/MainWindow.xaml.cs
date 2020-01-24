@@ -20,15 +20,11 @@ namespace TodoListFrontend
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : NavigationWindow
-    {
-        private Lista currentList;
-        public Lista CurrentList { get => currentList; } 
+    {   
         public MainWindow()
         {
-            InitializeComponent();
-            
-            currentList = new Lista();
-            this.Navigate(new MainPage(CurrentList.Todos));
+            InitializeComponent();       
+            this.Navigate(new MainPage());
         }
 
     }

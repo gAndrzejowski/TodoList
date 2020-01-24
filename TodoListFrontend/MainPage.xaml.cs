@@ -21,10 +21,12 @@ namespace TodoListFrontend
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage(List<Todo> lista)
+        App aplikacja;
+        public MainPage()
         {
             InitializeComponent();
-            this.Todos.ItemsSource = lista;
+            aplikacja = ((App)Application.Current);
+            this.Todos.ItemsSource = aplikacja.AktualnaLista.Todos;
         }
         public void TodoClick(object target, SelectionChangedEventArgs e)
         {
@@ -32,6 +34,9 @@ namespace TodoListFrontend
             this.NavigationService.Navigate(new TodoPage(todo));
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Edycja());
+        }
     }
 }
