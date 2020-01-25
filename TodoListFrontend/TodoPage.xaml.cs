@@ -34,9 +34,17 @@ namespace TodoListFrontend
             this.NavigationService.GoBack();
         }
 
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            App aplikacja = ((App)Application.Current);
+            aplikacja.UsunTodo(CurrentTodo);
+            this.NavigationService.Navigate(new MainPage());
+        }
+
         private void Edit(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Edycja(CurrentTodo));
         }
+
     }
 }

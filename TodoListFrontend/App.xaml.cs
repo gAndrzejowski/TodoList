@@ -20,5 +20,10 @@ namespace TodoListFrontend
         {
             AktualnaLista.ZmodyfikujLubDodajTodo(zmienione);
         }
+
+        public void UsunTodo(Todo doUsuniecia)
+        {
+            AktualnaLista.UsunTodo(doUsuniecia);
+        }
     }
 }

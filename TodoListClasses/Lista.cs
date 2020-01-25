@@ -18,9 +18,26 @@ namespace TodoListClasses
             get => todos;
         }
 
+        private int znajdzTodo(Todo todo)
+        {
+            return todos.FindIndex(element => element.Id == todo.Id);
+        }
+
+        public List<Todo> UsunTodo(Todo todo)
+        {
+            int pozycja = znajdzTodo(todo);
+
+            if (pozycja != -1)
+            {
+                todos.RemoveAt(pozycja);
+            }
+            return Todos;
+        }
+
         public List<Todo> ZmodyfikujLubDodajTodo(Todo todo)
         {
-            int pozycja = todos.FindIndex(element => element.Id == todo.Id);
+            int pozycja = znajdzTodo(todo);
+
             if (pozycja == -1)
             {
                 todos.Add(todo);
