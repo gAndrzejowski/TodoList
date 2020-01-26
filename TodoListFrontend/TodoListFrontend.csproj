@@ -121,5 +121,12 @@
       <Name>TodoListClasses</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\main.jpg" />
+    <Resource Include="Resources\todo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

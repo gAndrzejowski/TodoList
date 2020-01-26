@@ -9,10 +9,10 @@ namespace TodoListTests
     public class TestLista
     {
         [TestMethod]
-        public void ListTworzyNiepustaListeTodos()
+        public void ListTworzyPustaListeTodos()
         {
             Lista listaTestowa = new Lista();
-            Assert.AreNotEqual(listaTestowa.Todos.Count, 0);
+            Assert.AreEqual(listaTestowa.Todos.Count, 0);
         }
 
         [TestMethod]

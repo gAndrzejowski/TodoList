@@ -31,7 +31,7 @@ namespace TodoListFrontend
 
         private void Back(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.NavigationService.Navigate(new MainPage());
         }
 
         private void Delete(object sender, RoutedEventArgs e)

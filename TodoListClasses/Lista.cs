@@ -9,9 +9,6 @@ namespace TodoListClasses
         public Lista()
         {
             todos = new List<Todo>();
-            todos.Add(new Todo("Zadanie pierwsze"));
-            todos.Add(new Todo("Zadanie drugie"));
-            todos.Add(new Todo("Zadanie dodatkowe", DateTime.Today.AddDays(140), 1, "Bardzo ważne zadanie\nAż do przesady"));
         }
         public List<Todo> Todos
         {
