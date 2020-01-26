@@ -9,18 +9,32 @@ namespace TodoListClasses
         public Lista()
         {
             todos = new List<Todo>();
-            todos.Add(new Todo("Zadanie pierwsze"));
-            todos.Add(new Todo("Zadanie drugie"));
-            todos.Add(new Todo("Zadanie dodatkowe", DateTime.Today.AddDays(140), 1, "Bardzo ważne zadanie\nAż do przesady"));
         }
         public List<Todo> Todos
         {
             get => todos;
         }
 
+        private int znajdzTodo(Todo todo)
+        {
+            return todos.FindIndex(element => element.Id == todo.Id);
+        }
+
+        public List<Todo> UsunTodo(Todo todo)
+        {
+            int pozycja = znajdzTodo(todo);
+
+            if (pozycja != -1)
+            {
+                todos.RemoveAt(pozycja);
+            }
+            return Todos;
+        }
+
         public List<Todo> ZmodyfikujLubDodajTodo(Todo todo)
         {
-            int pozycja = todos.FindIndex(element => element.Id == todo.Id);
+            int pozycja = znajdzTodo(todo);
+
             if (pozycja == -1)
             {
                 todos.Add(todo);

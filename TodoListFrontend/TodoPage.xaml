@@ -5,14 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TodoListFrontend"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="TodoPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Resources/todo.jpg" Stretch="UniformToFill" />
+    </Page.Background>
     <Page.Resources>
         <Style x:Key="Headline" TargetType="TextBlock">
             <Setter Property="FontSize" Value="24" />
             <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="Margin" Value="10,0,0,0" />
             <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="500" />
         </Style>
         <Style x:Key="Priority" TargetType="TextBlock">
             <Style.Triggers>
@@ -34,6 +39,7 @@
             </Style.Triggers>
             <Setter Property="FontSize" Value="24" />
             <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="5" />
         </Style>
         <Style x:Key="Button" TargetType="Button">
             <Setter Property="FontSize" Value="14" />
@@ -46,6 +52,9 @@
         </Style>
     </Page.Resources>
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="AntiqueWhite" Opacity="0.3" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="700" />
             <ColumnDefinition Width="100" />
@@ -56,20 +65,37 @@
             <RowDefinition />
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Nazwa, Mode=OneWay}" Grid.Row="0" Grid.Column="0" Style="{StaticResource Headline}" />
-        <TextBlock Name="Priorytet" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource Priority}">
+        <TextBlock Text="{Binding Nazwa, Mode=OneWay}" Grid.Row="0" Grid.Column="0" Style="{StaticResource Headline}">
+            <TextBlock.Background>
+                <SolidColorBrush Color="AntiqueWhite" Opacity="0.6" />
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock Name="Priorytet" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource Priority}" HorizontalAlignment="Center">
+            <TextBlock.Background>
+                <SolidColorBrush Color="AntiqueWhite" Opacity="0.8" />
+            </TextBlock.Background>
             <Run Text="P" />
             <Run Text="{Binding Priorytet, Mode=OneWay}" />
         </TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  FontSize="18">
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  FontSize="18" Width="300" HorizontalAlignment="Left" Margin="10" Padding="10">
+            <TextBlock.Background>
+                <SolidColorBrush Color="AntiqueWhite" Opacity="0.6" />
+            </TextBlock.Background>
             <Run Text="Termin: "/>
             <Run Text="{Binding DeadlineSformatowane, Mode=OneWay}" />
         </TextBlock>
-        <TextBlock Text="{Binding Opis, Mode=OneWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" FontSize="14"/>
-        <Button Click="Back" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="-100, 0, 0, 0">
+        <TextBlock Text="{Binding Opis, Mode=OneWay}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" FontSize="14" MinHeight="150" Margin="10" Padding="10">
+            <TextBlock.Background>
+                <SolidColorBrush Color="AntiqueWhite" Opacity="0.6" />
+            </TextBlock.Background>
+        </TextBlock>
+        <Button Click="Back" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="-150, 0, 0, 0">
             Powrót
         </Button>
-        <Button Click="Edit" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="100, 0, 0, 0">
+        <Button Click="Delete" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="0, 0, 0, 0">
+            Usuń
+        </Button>
+        <Button Click="Edit" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Margin="150, 0, 0, 0">
             Edytuj
         </Button>
     </Grid>

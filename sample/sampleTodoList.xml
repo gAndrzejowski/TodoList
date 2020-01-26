@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Lista xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Todos>
+    <Todo>
+      <Nazwa>Kupić mleko</Nazwa>
+      <Priorytet>4</Priorytet>
+      <Deadline>2020-01-28T00:00:00</Deadline>
+      <Opis>Bo się kończy</Opis>
+    </Todo>
+    <Todo>
+      <Nazwa>Nakarmić kota</Nazwa>
+      <Priorytet>2</Priorytet>
+      <Deadline>2020-01-26T00:00:00</Deadline>
+      <Opis>Bo marudzi</Opis>
+    </Todo>
+    <Todo>
+      <Nazwa>Podlać kwiatki</Nazwa>
+      <Priorytet>2</Priorytet>
+      <Deadline>2020-01-29T00:00:00</Deadline>
+      <Opis>Żeby nie wyschły</Opis>
+    </Todo>
+    <Todo>
+      <Nazwa>Oddać auto do przeglądu</Nazwa>
+      <Priorytet>1</Priorytet>
+      <Deadline>2020-02-18T00:00:00</Deadline>
+      <Opis>Może być drogo jak złapią bez aktualnych badań</Opis>
+    </Todo>
+    <Todo>
+      <Nazwa>Odebrać przesyłkę od kuriera</Nazwa>
+      <Priorytet>5</Priorytet>
+      <Deadline>2020-01-30T00:00:00</Deadline>
+      <Opis>Pewnie i tak zostawi awizo</Opis>
+    </Todo>
+  </Todos>
+</Lista>

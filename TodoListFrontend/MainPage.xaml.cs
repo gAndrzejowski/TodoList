@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using TodoListClasses;
 
 namespace TodoListFrontend
@@ -22,6 +23,7 @@ namespace TodoListFrontend
     public partial class MainPage : Page
     {
         App aplikacja;
+        private string xmlSpec = "XML Files (*.xml) | *.xml";
         public MainPage()
         {
             InitializeComponent();
@@ -34,9 +36,33 @@ namespace TodoListFrontend
             this.NavigationService.Navigate(new TodoPage(todo));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NoweTodoClick(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Edycja());
+        }
+
+        private void ZapisDoPlikuClick(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.Filter = xmlSpec;
+            fileDialog.Title = "Wybierz plik do eksportu listy";
+            if (fileDialog.ShowDialog() == true)
+            {
+                SerializacjaDeserializacjaXML.Zapis(fileDialog.FileName, aplikacja.AktualnaLista);
+            }
+        }
+
+        private void OdczytZPlikuClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = xmlSpec;
+            fileDialog.Title = "Wybierz plik do zaimportowania listy";
+            if (fileDialog.ShowDialog() == true)
+            {
+                Lista odczytano = SerializacjaDeserializacjaXML.Odczyt(fileDialog.FileName);
+                aplikacja.AktualnaLista = odczytano;
+                Todos.ItemsSource = odczytano.Todos;
+            }
         }
     }
 }

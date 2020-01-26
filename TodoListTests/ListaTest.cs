@@ -9,10 +9,10 @@ namespace TodoListTests
     public class TestLista
     {
         [TestMethod]
-        public void ListTworzyNiepustaListeTodos()
+        public void ListTworzyPustaListeTodos()
         {
             Lista listaTestowa = new Lista();
-            Assert.AreNotEqual(listaTestowa.Todos.Count, 0);
+            Assert.AreEqual(listaTestowa.Todos.Count, 0);
         }
 
         [TestMethod]
@@ -49,6 +49,25 @@ namespace TodoListTests
 
             int pozycjaDrugiego = testowa.Todos.FindIndex(todo => todo == drugie);
             Assert.AreEqual(pozycjaDrugiego, pozycjaPierwszego);
+        }
+
+        [TestMethod]
+        public void UsunTodoUsuwaZnalezioneNaLiscieTodo()
+        {
+            Lista testowa = new Lista();
+            Todo doUsuniecia = new Todo("To todo jest na liście", new DateTime(2012, 12, 3), 3, "Więc zostanie usunięte", "70j357n4l15c13");
+            testowa.Todos.Add(doUsuniecia);
+            testowa.UsunTodo(doUsuniecia);
+            Assert.AreEqual(-1, testowa.Todos.FindIndex(todo => todo.Id == doUsuniecia.Id));
+        }
+
+        public void UsunTodoNieZmieniaListyJesliTodoNieZostanieZnalezione()
+        {
+            Lista testowa = new Lista();
+            Todo nieobecneNaLiscie = new Todo("Tego nie ma na liście", new DateTime(2012, 12, 3), 3, "Więc nic się nie zmieni", "73go70d0n13m4");
+            int dlugoscListyPrzedUsun = testowa.Todos.Count;
+            testowa.UsunTodo(nieobecneNaLiscie);
+            Assert.AreEqual(dlugoscListyPrzedUsun, testowa.Todos.Count);
         }
     }
 }

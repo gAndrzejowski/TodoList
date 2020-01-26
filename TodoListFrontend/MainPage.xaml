@@ -5,8 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TodoListFrontend"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="MainPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Resources/main.jpg" Stretch="UniformToFill" />
+    </Page.Background>
     <Page.Resources>
         <Style x:Key="TodoItem" TargetType="ListBoxItem">
             <Setter Property="Background" Value="Azure" />
@@ -21,21 +24,45 @@
             <Setter Property="Margin" Value="10" />
             <Setter Property="BorderBrush" Value="Transparent" />
         </Style>
+        <Style x:Key="Button" TargetType="Button">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="DarkBlue" />
+            <Setter Property="Background" Value="Wheat" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
     </Page.Resources>
     <Page.Content>
         <Grid>
+            
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
             <ListBox 
                 Name="Todos" 
                 ItemContainerStyle="{StaticResource TodoItem}" 
                 Style="{StaticResource TodoList}" 
                 SelectionChanged="TodoClick"
                 Grid.Row="0"
-                />
-            <Button Click="Button_Click" Grid.Row="1">Nowe Todo</Button>
+                Grid.ColumnSpan="5"
+                >
+                <ListBox.Background>
+                    <SolidColorBrush Color="BlanchedAlmond" Opacity="0.3" />
+                </ListBox.Background>
+            </ListBox>
+            <Button Click="NoweTodoClick" Grid.Row="1" Grid.Column="1" Style="{StaticResource Button}">Nowe Todo</Button>
+            <Button Click="ZapisDoPlikuClick" Grid.Row="1" Grid.Column="2" Style="{StaticResource Button}">Zapisz listę</Button>
+            <Button Click="OdczytZPlikuClick" Grid.Row="1" Grid.Column="3" Style="{StaticResource Button}">Otwórz listę</Button>
         </Grid>
     </Page.Content>
 </Page>
